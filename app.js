@@ -14,6 +14,12 @@ var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk(dbip + ':27017/hackathon');
 
+//preparar pra consumir um serviço SOAP
+var soap = require('soap');
+
+//serviços soap a serem utilizados
+var servicoTCU = 'http://contas.tcu.gov.br/encclaWebServiceWeb/web/externo/enccla.wsdl';
+
 //carregar scripts de roteamento
 var routes = require('./routes/index');
 var users = require('./routes/users');
