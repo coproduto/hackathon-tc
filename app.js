@@ -23,6 +23,7 @@ var servicoTCU = 'http://contas.tcu.gov.br/encclaWebServiceWeb/web/externo/enccl
 //carregar scripts de roteamento
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var transparencia = require('./routes/transparencia');
 
 //instanciar o express
 var app = express();
@@ -53,6 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //selecionar a rota raiz
 app.use('/', routes);
 app.use('/users', users);
+app.use('/candidatos', transparencia);
 
 //erro 404
 app.use(function(req, res, next) {
