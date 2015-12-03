@@ -19,12 +19,11 @@ html.no-js(lang='pt-br')
     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
     link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(href='/stylesheets/bootstrap-select.min.css', rel='stylesheet')
     link(href='/stylesheets/style.css', rel='stylesheet')
     // script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
   body
-    block sidebar
-    block pageTitle
-    block content
+    block header
     //if IE
       script(src='https://cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js')
       script(src='https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js')
@@ -32,4 +31,5 @@ html.no-js(lang='pt-br')
     // Coding End
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
-
+    script(src='js/bootstrap-select.min.js')
+    script(src='js/scripts.js')
