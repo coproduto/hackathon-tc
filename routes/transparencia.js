@@ -89,6 +89,5 @@ router.get('/',getCandidato);
 router.get('/',getDoadores);
 router.get('/',tcu.getInidoneos);
 router.get('/',cruzarBases);
-    
 
 module.exports = router;
