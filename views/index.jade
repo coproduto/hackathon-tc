@@ -2,8 +2,9 @@ extends layout
 block header
     .container
       .row
-        h1.text-center.text-uppercase.text-logo Na Lama
+        img#logo.img-responsive(src='images/logo_Na_Lama_Branco.png', alt='Cinque Terre')
     .vertical-center
+      section.busca
       .container
         .row
           .col-xs-8.col-xs-offset-2.centered
@@ -28,5 +29,23 @@ block header
                   option Brasil
               input.form-control(type='text ', name='x ', placeholder='Procure o candidato... ')
               span.input-group-btn
-                button.btn.btn-default(type='button ')
+                button#bottom.btn.btn-default(type='button ')
                   i.fa.fa-search
+    section.exibir
+            .container
+                .row
+                .panel.panel-default
+                    .panel-heading.text-center Governador
+                    .panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+                    .row
+                        .col-md-6 col1
+                            h1 Teste
+                        .col-md-6 col2
+                    .row
+                        .col-md-6 col1
+                        .col-md-6 col2
+                    .row
+                        .col-md-6 col1
+                        .col-md-6 col2
+
+

@@ -5,6 +5,15 @@ body {
     display: block;
     padding: 0 !important;
     margin: 0;
+    overflow: hidden
+}
+section.busca {
+    background: url('/images/background.png')no-repeat;
+    background-size: 100%;
+    height: 140px;
+    display: block;
+    padding: 0 !important;
+    margin: 0;
 }
 .vertical-center {
     min-height: 100%;
@@ -18,4 +27,10 @@ body {
     font-family: 'Montserrat';
     font-size: 52px;
     letter-spacing: 3px;
+}
+section.exibir {
+    background-color: #2e7d33;
+}
+#logo {
+    height: 50px
 }
