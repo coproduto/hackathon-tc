@@ -1,5 +1,5 @@
 extends layout
-block sidebar
+block header
     .container
       .row
         h1.text-center.text-uppercase.text-logo Na Lama
@@ -7,52 +7,25 @@ block sidebar
       .container
         .row
           .col-xs-8.col-xs-offset-2.centered
-            .input-group
+          .input-group
               .input-group-btn.search-panel
-                button#ano.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-                  span#search_concept Ano
-                  span.caret
-                ul.dropdown-menu.ano(role='menu ', aria-labelledby='ano ')
-                  li
-                    a(href='#2002 ') 2002
-                  li
-                    a(href='#2004 ') 2004
-                  li
-                    a(href='#2006 ') 2006
-                  li
-                    a(href='#2008 ') 2008
-                  li
-                    a(href='#2010 ') 2010
-                  li
-                    a(href='#2012 ') 2012
-                  li
-                    a(href='#2014 ') 2014
-                  li.divider
-                  li
-                    a(href='#all ') Todos
-                    
+                select.selectpicker
+                  option 2014
+                  option 2012
+                  option 2010
+                select#cargo.selectpicker
+                  option Governador
+                  option Presidente
               .input-group-btn.search-panel
-                button#estado.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown')
-                  span#search_concept Estado
-                  span.caret
-                ul.dropdown-menu.estado(role='menu ', aria-labelledby='estado')
-                  li
-                    a(href='# ') Pernambuco
-                  li
-                    a(href='# ') Ceara
-                  li
-                    a(href='# ') Bahia
-                  li
-                    a(href='# ') Paraiba
-                  li
-                    a(href='# ') Alagoas
-                  li
-                    a(href='# ') Piaui
-                  li
-                    a(href='# ') Rio de Janeiro
-                  li.divider
-                  li
-                    a(href='#all ') Todos
+                select#uf.selectpicker
+                  option Pernambuco
+                  option Sao Paulo
+                  option Rio de Janeiro
+                  option Alagoas
+                  option Paraiba  
+                  option(data-divider="true")
+                  option Todos  
+                  option Brasil
               input.form-control(type='text ', name='x ', placeholder='Procure o candidato... ')
               span.input-group-btn
                 button.btn.btn-default(type='button ')

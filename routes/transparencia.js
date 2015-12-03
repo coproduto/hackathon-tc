@@ -45,10 +45,9 @@ function getCandidato(req, res, next) {
     request.end();
 };
 
-function getDoadores(req, res) {
+function getDoadores(req, res, next) {
     var opt = options;
     opt.path = pathDoadores(req.candidato.id,req.query.ano);
-    console.log('path doadores: ' + opt.path);
 
     var request = http.request(opt, function(response) {
 	var retorno = '';
@@ -59,18 +58,36 @@ function getDoadores(req, res) {
 
 	response.on('end', function(ret) {
 	    req.doadores = JSON.parse(retorno);
-	    res.json( {
+	    //console.log(req.doadores);
+	    /*res.json( {
 		"candidato" : req.candidato,
 		"doadores" : req.doadores
-	    });
+	    });*/
+	    next();
 	});
     });
 
     request.end();
 };
 
+function cruzarBases(req, res) {
+    var doacoes = req.doadores;
+    var inid = req.inidoneos;
+
+    doacoes = doacoes.filter(function(elem) {
+	return ((inid.indexOf(elem.cgc)) > -1)
+    });
+
+    res.json({
+	"candidato" : req.candidato,
+	"doacoes" : req.doadores,
+	"doadores_inidoneos" : doacoes
+    });
+};
+
 router.get('/',getCandidato);
 router.get('/',getDoadores);
-    
+router.get('/',tcu.getInidoneos);
+router.get('/',cruzarBases);
 
 module.exports = router;
