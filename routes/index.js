@@ -1,7 +1,9 @@
+//rota base - carrega a página inicial
+
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET página inicial */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'NA LAMA' });
 });

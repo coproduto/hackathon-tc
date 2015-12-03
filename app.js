@@ -50,8 +50,6 @@ app.use(cookieParser());
 //selecionar o diretório de conteúdo estático
 app.use(express.static(path.join(__dirname, 'public')));
 
-//TODO aqui: disponibilizar a DB pros pedidos
-
 //selecionar a rota raiz
 app.use('/', routes);
 
@@ -68,9 +66,7 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-//outros erros
-
-// dev (stacktrace)
+// erro de desenvolvimento (stacktrace)
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
@@ -82,7 +78,6 @@ if (app.get('env') === 'development') {
 }
 
 //erros gerais
-//configurar pra mostrar uma página mais legal
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {

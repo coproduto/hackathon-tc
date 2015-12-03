@@ -1,3 +1,6 @@
+//rota dos pedidos de licitações
+//utilizada para obter entidades que receberam licitações após apoiar um dado candidato
+
 var express = require('express');
 var router = express.Router();
 
@@ -7,6 +10,7 @@ function pathLicitacao(cnpj) {
     return '/DadosAbertos/LicitacoesDetalhes!json?NUMERODOCUMENTOAJUSTADO=' + cnpj;
 }
 
+//opções do pedido HTTP GET
 var options = {
     'hostname' : 'sistemas.tce.pe.gov.br',
     'port' : 80,
@@ -37,6 +41,7 @@ function getLicitacoes(req, res, next) {
     request.end();
 };
 
+//futuramente utilizar para filtrar as licitações por data - no momento não faz nada
 function filtrarDataLicitacoes(req, res) {
     var licitacoes = req.licitacoes;
 
@@ -46,6 +51,7 @@ function filtrarDataLicitacoes(req, res) {
     });
 };
 
+//rota completa (cima para baixo)
 router.get('/',getLicitacoes);
 router.get('/',filtrarDataLicitacoes);
 
