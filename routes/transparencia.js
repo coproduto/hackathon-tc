@@ -1,16 +1,20 @@
+//rota geral de pedidos sobre candidatos
+
 var express = require('express');
 var router = express.Router();
 
 var http = require('http');
-var doacao = require('./doacoes.js');
-var tcu = require('./tcu_data.js');
+var doacao = require('./doacoes.js'); //para carregar dados de doações da Transparência Brasil
+var tcu = require('./tcu_data.js');   //carregar dados de inidoneidade do TCU
 
-var tokens = require('./tokens.js');
+var tokens = require('./tokens.js');  //tokens necessários para as APIs
 
+//constroi a URL para requisitar candidatos à API da Transparência Brasil
 function pathCandidato(estado,cargo) {
     return '/api/v1/candidatos?estado=' + estado + '&cargo=' + cargo;
 }
 
+//opções do pedido HTTP GET
 var options = {
     'hostname' : 'api.transparencia.org.br',
     'port' : 80,
@@ -40,6 +44,7 @@ function getCandidato(req, res, next) {
     request.end();
 };
 
+//cruza as informações das bases de dados da Transparência Brasil e do TCU para obter doações de inidôneos
 function cruzarBases(req, res) {
     var doacoes = req.doadores;
     var inid = req.inidoneos;
@@ -55,6 +60,7 @@ function cruzarBases(req, res) {
     });
 };
 
+//rota completa dos pedidos de candidato: (execução de cima para baixo)
 router.get('/',getCandidato);
 router.get('/',doacao.getDoadores);
 router.get('/',tcu.getInidoneos);

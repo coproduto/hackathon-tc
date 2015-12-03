@@ -1,6 +1,9 @@
-var tokens = require('./tokens.js');
+//rota utilizada pela rota de candidatos para carregar os registros de doações da Transparência Brasil
+
+var tokens = require('./tokens.js'); //tokens necessários para as APIs
 var http = require('http');
 
+//opções do pedido HTTP GET
 var options = {
     'hostname' : 'api.transparencia.org.br',
     'port' : 80,
@@ -10,6 +13,7 @@ var options = {
     }
 };
 
+//constroi a URL para requisitar doadores à API da Transparencia Brasil
 function pathDoadores(id_candidato,ano) {
     return '/api/v1/candidatos/' + id_candidato + '/doadores?anoEleitoral=' + ano;
 }

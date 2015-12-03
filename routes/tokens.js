@@ -1,3 +1,5 @@
+//armazenar tokens necessários para acesso às APIs aqui
+
 var app_token = 'bDzoCXvsFPgq';
 
 var tokens = {
