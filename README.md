@@ -36,3 +36,40 @@ Em geral, para modificar o NaLama, é necessário criar uma nova rota (no expres
 Em caso de dúvidas, você também pode me contatar no email [cstl.px@gmail.com](mailto://cstl.px@gmail.com).
 
 Happy hacking!
+
+---
+
+#Documentação do cliente
+
+Para consultar a API REST implementada pelo servidor do NaLama, existem 2 métodos:
+
+A partir de agora, considere que [servidor] refere-se ao endereço do servidor.
+
+*Formato da requisição*: [servidor]/método?param1=valor&param2=valor&param3...
+
+##Método "Candidatos"
+
+---
+
+**Pedido**: HTTP GET '[servidor]/candidatos'
+
+**Parâmetros**: 
+  **estado**: sigla da UF do candidato desejado. Exemplos: PE, RJ, SP
+  **cargo**: cargo ao qual o candidato se candidatou:
+    1 = presidente,
+    2 = vice-presidente,
+    3 = governador,
+    4 = vice-governador,
+    5 = senador,
+    6 = deputado federal,
+    7 = deputado estadual,
+    8 = deputado distrital
+    **ano**: ano da eleição
+    
+**Pedido: HTTP GET '[servidor]/licitacoes'
+
+**Parâmetros**:
+  **cnpj**: CPF ou CNPJ da pessoa física ou jurídica cujas licitações devem ser buscadas
+  
+Em caso de dúvidas, você também pode me contatar no email [cstl.px@gmail.com](mailto://cstl.px@gmail.com).
+    
