@@ -49,8 +49,6 @@ A partir de agora, considere que [servidor] refere-se ao endereço do servidor.
 
 ##Método "Candidatos"
 
----
-
 **Pedido**: HTTP GET '[servidor]/candidatos'
 
 **Parâmetros**: 
@@ -66,10 +64,68 @@ A partir de agora, considere que [servidor] refere-se ao endereço do servidor.
     8 = deputado distrital
     **ano**: ano da eleição
     
-**Pedido: HTTP GET '[servidor]/licitacoes'
+ **Retorno**:
+  ```
+   { "candidato" : 
+     { "id" : string,
+       "nome" : string,
+       "numero" : string,
+       "titulo" : string,
+       "matricula" : string,
+       "cargo" : string,
+       "estado" : string,
+       "partido" : string,
+       "ocupacao" : string,
+       "miniBio" : string,
+       "cargos" : string,
+       "reeleicao" : bool,
+       "foto" : string,
+       "casaAtual" : string,
+       "previsao" : string,
+       "bancadas" : string
+     },
+     "doacoes" :
+     [{ "nome" : string,
+        "cgc" : string, //CPF ou CNPJ
+        "montante" : string
+     }],
+     "doadores_inidoneos" :
+     [ string ] //lista de CPFs ou CNPJs
+  }
+ ```
+ 
+ ##Método "Licitações"
+ 
+**Pedido**: HTTP GET '[servidor]/licitacoes'
 
 **Parâmetros**:
   **cnpj**: CPF ou CNPJ da pessoa física ou jurídica cujas licitações devem ser buscadas
+ 
+ **Retorno**:
+ ```
+  { "licitacoes" :
+    [{ 
+     "TOTALADJUDICADOLICITACAO" : string,
+     "RAZAOSOCIAL" : string,
+     "NOMENATUREZA" : string,
+     "RESULTADOHABILITACAO" : string,
+     "NUMERODOCUMENTOAJUSTADO" : string, //cpf ou cnpj
+     "CODIGOUG" : string, //unidade gestora
+     "TOTALADJUDICADOLICITANTE" : string, //valor da licitação
+     "ESTAGIOLICITACAO" : string,
+     "NUMEROMODALIDADE" : string,
+     "DATAPUBLICACAOHOMOLOGACAO" : string,
+     "ESPECIFICACAOOBJETO" : string,
+     "QTDELICITANTES" : string,
+     "SITUACAOLICITACAO" : string,
+     "ANOMODALIDADE" : string,
+     "ADJUDICADA" : string,
+     "DESCRICAOOBJETO" : string,
+     "CODIGOPL" : string,
+     "NOMEMODALIDADE" : string
+    }]
+  }
+ ```
   
 Em caso de dúvidas, você também pode me contatar no email [cstl.px@gmail.com](mailto://cstl.px@gmail.com).
     
