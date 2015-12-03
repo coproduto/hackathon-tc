@@ -1,0 +1,5 @@
+
+
+function pathDoadores(id_candidato,ano) {
+    return '/api/v1/candidatos/' + id_candidato + '/doadores?anoEleitoral=' + ano;
+}
