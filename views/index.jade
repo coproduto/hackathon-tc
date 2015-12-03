@@ -10,7 +10,7 @@ block header
           .col-xs-8.col-xs-offset-2.centered
           .input-group
               .input-group-btn.search-panel
-                select.selectpicker
+                select#ano.selectpicker
                   option 2014
                   option 2012
                   option 2010
@@ -35,17 +35,27 @@ block header
             .container
                 .row
                 .panel.panel-default
-                    .panel-heading.text-center Governador
-                    .panel-body We are a fairly small, flexible design studio that designs for print and web. We work flexibly with clients to fulfil their design needs. Whether you need to create a brand from scratch, including marketing materials and a beautiful and functional website or whether you are looking for a design refresh we are confident you will be pleased with the results.
+                    .panel-heading#cargo_atual.text-center 
+                    .panel-body 
                     .row
-                        .col-md-6 col1
-                            h1 Teste
-                        .col-md-6 col2
+                        .col-md-6 
+                            h1#apelido
+                            p#nome
+                            p#partido
+                            p#miniBio
+                        .col-md-6 
+                            ul#doacoes
+                                li#doac1
+                                li#doac2
+                                li#doac3
+                                li#doac4
+                                li#doac5
+                                
                     .row
-                        .col-md-6 col1
-                        .col-md-6 col2
+                        .col-md-6 
+                        .col-md-6 
                     .row
-                        .col-md-6 col1
-                        .col-md-6 col2
+                        .col-md-6 
+                        .col-md-6 
 
 
